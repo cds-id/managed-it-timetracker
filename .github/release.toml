@@ -1,0 +1,21 @@
+[changelog]
+# Configure the sections that should appear in the changelog
+header = """
+# Changelog
+All notable changes to this project will be documented in this file.
+"""
+body = """
+{% if entries[0] %}
+{% for entry in entries %}
+## {{ entry.version }} ({{ entry.date | date(format="%Y-%m-%d") }})
+{% for type, changes in entry.changes | group_by(attribute="type") %}
+### {{ type | upper_first }}
+{% for change in changes %}
+* {{ change.description | upper_first }}{% if change.author %} ({{ change.author }}){% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% else %}
+* No changes in this release
+{% endif %}
+"""
