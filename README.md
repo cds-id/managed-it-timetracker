@@ -2,7 +2,7 @@
 
 Track your time spent on tasks efficiently with the Managed IT TimeTracker desktop application.
 
-![TimeTracker Screenshot](screenshot.png)
+![TimeTracker Screenshot](screenshoot.png)
 
 ## Features
 
